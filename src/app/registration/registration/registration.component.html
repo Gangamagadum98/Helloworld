@@ -1,0 +1,63 @@
+
+<div class="container">
+    <div class="row">
+        <div class="well">
+            
+            <h2>Registration Form</h2>
+        
+        </div>
+        <div class="col-md-12">
+            
+                <form  #form="ngForm" name="form">
+                    <label> First name : </label>
+                    <input type="text" class="form-control form-group"  name="firstname" [(ngModel)]="firstname" #fname="ngModel" required>
+                    <span *ngIf="fname.touched && !fname.value">
+                        First name is mandatory field
+                    </span>
+                    <span *ngIf="fname.dirty && fname.invalid && fname.value">
+                        First name should contain minimum 10 chars and only alphanumerics are allowed.
+                    </span>
+                    
+                    
+                    <br/>
+                    <label>Last name : </label>
+                    <input type="text"  class="form-control form-group" name="lastname"  [(ngModel)]="lastname" #lname="ngModel" required>  
+                    <span *ngIf="lname.touched && !lname.value">
+                            last name is mandatory field
+                        </span>
+                        <span *ngIf="lname.dirty && lname.invalid && lname.value">
+                                last name should contain minimum 10 chars and only alphanumerics,@_& special symbols are allowed.
+                        </span>
+                   
+                    <br/>
+                    <label>Mob no : </label>          
+                    <input type="text" class="form-group form-control" name="mobno" [(ngModel)]="mobno" #mob="ngModel" required>
+                    <span *ngIf="mob.touched && !mob.value">
+                            mobno is mandatory field
+                        </span>
+                        <span *ngIf="mob.dirty && mob.invalid && mob.value">
+                                mob no must contain digits and only 10 digits
+                        </span>
+                        <br/>
+    
+                        <label>Email : </label>
+                        <input type="text"  class="form-control form-group" name="email" [(ngModel)]="email" #mail="ngModel" required>  
+                        <span *ngIf="mail.touched && !mail.value">
+                                Email is mandatory field
+                            </span>
+                           
+                    <br/>
+                    <button type="button" class="btn btn-success" (click)="navigateToLogin()" [disabled]=form.invalid>
+                        Submit
+                    </button>
+
+                    <button type="reset" class="btn btn-danger">
+                        cancel
+                    </button>
+    
+                </form>
+                
+            </div>
+        </div>
+    </div>
+    

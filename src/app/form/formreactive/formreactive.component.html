@@ -1,0 +1,76 @@
+
+
+<div class="container">
+<div class="row">
+    <div class="well">
+        
+        <h2>Registration Form</h2>
+    
+    </div>
+    <div class="col-md-12">
+        
+            <form  [formGroup]="reg" name="form">
+                <label> First name : </label>
+                <input type="text" class="form-control form-group"  name="firstname" formControlName="firstname" >
+                <span *ngIf="reg.get('firstname').touched && !reg.get('firstname').value">
+                    First name is mandatory field
+                </span>
+                <span *ngIf="reg.get('firstname').dirty && reg.get('firstname').invalid && reg.get('firstname').value">
+                    First name should contain minimum 10 chars and only alphanumerics are allowed.
+                </span>
+                
+                
+                <br/>
+                <label>Last name : </label>
+                <input type="text"  class="form-control form-group" name="lastname" formControlName="lastname">  
+                <span *ngIf="reg.get('lastname').touched && !reg.get('lastname').value">
+                        last name is mandatory field
+                    </span>
+                    <span *ngIf="reg.get('lastname').dirty && reg.get('lastname').invalid && reg.get('lastname').value">
+                            last name should contain minimum 10 chars and only alphanumerics,@_& special symbols are allowed.
+                    </span>
+               
+                <br/>
+                <label>Mob no : </label>          
+                <input type="text" class="form-group form-control" name="mobno" formControlName="mobno">
+                <span *ngIf="reg.get('mobno').touched && !reg.get('mobno').value">
+                        mobno is mandatory field
+                    </span>
+                    <span *ngIf="reg.get('mobno').dirty && reg.get('mobno').invalid && reg.get('mobno').value">
+                            mob no must contain digits and only 10 digits
+                    </span>
+                    <br/>
+
+                <label>select languages : </label><br>
+                <label class="checkbox-inline" >
+                   
+                <input type="checkbox" name="lang" formControlName="java" >
+                Java
+                </label>
+                <label class="checkbox-inline" >
+                    <input type="checkbox" name="lang" formControlName="angular">
+                    Angular
+                </label>
+                
+                <br>
+                <br/>
+               
+                <label>Select Gender : </label><br>
+                <label class="radio-inline">
+                    <input type="radio" name="gendername" formControlName="gendername">
+                    Male
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="gendername" formControlName="gendername">
+                    Female
+                </label><br/>
+                <br/>
+                <button type="button" class="button-block form-group form-control btn-submit" (click)="display()" [disabled]=reg.invalid>
+                    Submit
+                </button>
+
+            </form>
+            
+        </div>
+    </div>
+</div>

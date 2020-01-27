@@ -1,0 +1,44 @@
+<div style = "background-color: brown">
+Start of app component <br>
+{{name}} <br/>
+{{title}} <br/>
+
+<h3>Given text is : {{text}}, contains {{text | getVowels:vowels}} vowels</h3>
+<ul>
+    <li *ngFor = "let color of colors">{{color}}</li>
+</ul>
+
+<ul>
+    <li *ngFor="let product of products">name - {{product.name}}<br> price - {{product.price}}</li>
+</ul>
+
+<ul>
+    <li *ngFor = "let color of colors">{{color}}</li>
+</ul>
+
+<h1>Excepected result</h1>
+
+<ul>
+    <h4 *ngFor="let element of cricketTeams">
+        <li *ngIf="element.champions===true">{{element.name}}</li>
+    </h4>
+</ul>
+
+<!--03-11-2019-->
+
+{{title | uppercase}} <br/>
+
+{{course | lowercase}} <br/>
+
+{{course | titlecase}} <br/>
+
+{{socialMedia | custom}} <br/>
+
+{{base | custom1 :exp}} <br>
+
+{{tip}}
+
+end of app componet
+ 
+
+</div>

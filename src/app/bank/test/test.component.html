@@ -1,0 +1,39 @@
+<p>test works!</p>
+<form  name="test" [formGroup]="form">
+    Name:<input type="text"  name="name" formControlName="name"/><br/>
+
+    <span *ngIf="form.get('name').touched && !form.get('name').value">Name is required</span><br/>
+    <span *ngIf="form.get('name').dirty && form.get('name').invalid && form.get('name').value">
+        name should allow atleast three chars
+    </span><br/>
+
+    Address:<input type="text" name="address" formControlName="address"/><br/>
+
+    <span *ngIf="form.get('address').touched && !form.get('address').value">Address is required</span><br/>
+    <span *ngIf="form.get('address').dirty && form.get('address').invalid && form.get('address').value">
+        Address should contain atleast 30 chars
+    </span><br/>
+
+    mobNo:<input type="text" name="mobNo" formControlName="mobNo"/><br/>
+    <span *ngIf="form.get('mobNo').touched && !form.get('mobNo').value">mobNo is required</span><br/>
+    <span *ngIf="form.get('mobNo').dirty && form.get('mobNo').invalid && form.get('mobNo').value">
+        mobile no must contain 10 digits
+    </span><br/>
+
+
+    Email: <input type="text" name="email" formControlName="email"/><br/>
+    <span *ngIf="form.get('email').touched && !form.get('email').value">Email is required</span><br/>
+    <span *ngIf="form.get('email').dirty && form.get('email').invalid && form.get('email').value">
+        Email should contain maximum 30 chars
+    </span><br/>
+
+   type: <input type="text"  name="type" formControlName="type"/><br/>
+   <span *ngIf="form.get('type').touched && !form.get('type').value">type is required</span><br/>
+   <span *ngIf="form.get('type').dirty && form.get('type').invalid && form.get('type').value">
+       type value should ccontain maximum 2 digits
+   </span><br/>
+
+  <button (click)="display(form)" type="button" >Submit</button><br/>
+  <button>Cancel</button>
+  
+</form>

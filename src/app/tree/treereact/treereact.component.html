@@ -1,0 +1,49 @@
+<form  [formGroup]="form" name="reg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="form-group input-group">
+                    <input type="text" class="form-control" placeholder="search your text here">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                        </div>
+                </div>
+           
+               
+                <div class="form-group input-group">
+                    <span class= "input-group-addon" ><i class="glyphicon glyphicon-user"></i></span>
+                    <input type="text" class="form-control" placeholder="Enter your username" name="username" formControlName="name">
+                    <span *ngIf="form.get('username').touched && !form.get('username').value">
+                        username is required
+                    </span>
+                </div>
+                <div class="form-group input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input type="text" class="form-control" placeholder="enter your password" name="password" formControlName="pass">
+                </div>
+                <div class="form-group input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+                    <input type="text" class="form-control" placeholder="enter your phone no" name="mobno" formControlName="mob">
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox">
+                            remember me ?
+                        </label>
+                    </div>
+                </div>
+            
+        
+                <div class="form-group">
+                    <button type="button" class="btn btn-success">Login</button>
+                    <button type="button" class="btn btn-primary">Login with Facebook</button>
+                </div>
+                <hr>
+                <p>Don't have an account<a href="">Sign up here ?</a></p>
+                
+            </div>
+        </div>
+    </div>
+</form>

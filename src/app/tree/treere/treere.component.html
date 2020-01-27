@@ -1,0 +1,62 @@
+<form [formGroup]="reg" name="form">
+        <div class="container">
+            <div class="row">
+                <div class="well">
+                    <label>Details</label>
+                </div>
+                
+                <div class="col-md-10">
+                    <div class="form-group">
+                        <label>First name: </label>
+                        <input type="text" class= "form-control" name="fn" formControlName="fname">
+                        <span *ngIf="reg.get('fname').touched && !reg.get('fname').value">
+                            First name is mandatory
+                        </span>
+                        <span *ngIf="reg.get('fname').dirty && reg.get('fname').invalid && reg.get('fname').value">
+                            First name should contain minimum 3 characters and only @_& symbols are allowed
+                        </span>
+        
+                       
+                    </div>
+                    <div class="form-group">
+                        <label>Second name: </label>
+                        <input type="text"  class= "form-control" name="sn" formControlName="sname">
+                    
+                            <span *ngIf="reg.get('sname').dirty && reg.get('sname').invalid && reg.get('sname').value">
+                                second name should contain minimum 3 characters and only @_& symbols are allowed
+                            </span>
+            
+                    </div>
+                    <div class="form-group">
+                        <label>email: </label>
+                        <input type="text"  class= "form-control" name="email" formControlName="email">
+                        <span *ngIf="reg.get('email').touched && !reg.get('email').value">
+                                email is mandatory
+                            </span>
+                            <span *ngIf="reg.get('email').dirty && reg.get('email').invalid && reg.get('email').value">
+                                    email should contain maximum 30 characters 
+                            </span>
+                       
+                    </div>
+
+                    <div class="form-group">
+                            <label>password: </label>
+                            <input type="password"  class= "form-control" name="password" formControlName="password">
+                            <span *ngIf="reg.get('password').touched && !reg.get('password').value">
+                                    password is mandatory
+                                </span>
+                             
+                         
+                        </div>
+                    <div class="form-group">
+                        <button type="button"  class="btn btn-success" >Submit</button>
+                        <button type="Cancel" class="btn btn-danger">Cancel</button>
+                        
+                    </div>
+                        
+                </div>
+                
+            </div>
+        </div>
+        </form>
+        

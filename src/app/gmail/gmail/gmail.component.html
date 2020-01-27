@@ -1,0 +1,27 @@
+<form #form="ngForm" name="form">
+    <br/>
+                    <label>Email:</label>
+                    <input type="text" placeholder="enter your email" name="email" [(ngModel)]="mail" #email="ngModel" required minlength="3">
+                    <span *ngIf="email.touched && !email.value">
+                        Email is mandatory
+                    </span><br/>
+                    <span *ngIf="email.dirty && email.value.length<3 && email.value.length>0">
+                           minimum 3 chars
+                        </span>
+              
+              
+                    <label>Password:</label>
+                    <input type="text"  placeholder="enter password" name="pass" [(ngModel)]="password" #pass="ngModel" required minlength="3">
+                    <span *ngIf="pass.touched && !pass.value">
+                            password is mandatory
+                        </span>
+                        <span *ngIf="pass.dirty && pass.value.length<3 && pass.value.length>0">
+                                minimum 3 chars
+                            </span>
+                            <br/>
+               
+                <button type="button" class="btn btn-primary" (click)="navigateToGmaild()" >submit</button>
+                <button type="reset" class="btn btn-danger">cancel</button>
+         
+  
+</form>

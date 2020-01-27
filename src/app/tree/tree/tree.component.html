@@ -1,0 +1,41 @@
+<form #reg="ngForm" name="form">
+<div class="container">
+    <div class="row">
+        <div class="well">
+            <label>Details</label>
+        </div>
+        
+        <div class="col-md-10">
+            <div class="form-group">
+                <label>First name: </label>
+                <input type="text" class= "form-control" name="fn" [(ngModel)]="first" #firstname="ngModel" required minlength="3">
+
+                <span *ngIf="firstname.touched && !firstname.value">
+                    First name is mandatory
+                </span>
+                <span *ngIf="firstname.dirty && firstname.value.length<3 && firstname.value.length>0">
+                    First name should contain minimum 3 chars
+                </span>
+            </div>
+            <div class="form-group">
+                <label>Second name: </label>
+                <input type="text"  class= "form-control">
+            </div>
+            <div class="form-group">
+                <label>email: </label>
+                <input type="text"  class= "form-control" name="email" [(ngModel)]="emil" #email="ngModel" required>
+                <span *ngIf="email.touched && !email.value">
+                    Email is mandatory
+                </span>
+            </div>
+            <div class="form-group">
+                <button type="button" (click)="display()" class="btn btn-success" [disabled]=reg.invalid>Submit</button>
+                <button type="Cancel" class="btn btn-danger">Cancel</button>
+                
+            </div>
+                
+        </div>
+        
+    </div>
+</div>
+</form>

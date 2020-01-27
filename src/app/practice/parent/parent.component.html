@@ -1,0 +1,14 @@
+<p>parent works!</p>
+{{hi}}
+<br/>
+
+<app-child1 (event) = "recieve($event)"></app-child1>
+<app-child2 [xyz] = "hi"></app-child2>
+<button type="button" (click) = "getdetail()">Get</button>
+<span *ngFor = "let detail of details">
+    {{detail.first_name}}
+    <img [src] = 'detail.avatar'>
+    {{detail.last_name}}
+    {{detail.email}}
+    
+</span>

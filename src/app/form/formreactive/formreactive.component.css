@@ -1,0 +1,16 @@
+.well{
+    background-color: #16a081;
+    color: #ffff;
+}
+.container{
+    border: "1px solid black";
+    background-color: #fbfbfb;
+    width:600px;
+    height:590px;
+}
+.btn-submit{
+    background-color: #16a081;
+    color: #ffff;
+}
+
+

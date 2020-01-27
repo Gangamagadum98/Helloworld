@@ -1,0 +1,44 @@
+<!-- Template Form-->
+
+<p>account works!</p>
+
+<form  #account = "ngForm" name="accounts">
+    <div>
+        name:<input type="text" name="userNames" #name="ngModel" [(ngModel)]= "userName" required minlength="10"/> <br/><br/>
+        <span *ngIf = "name.touched && !name.value">
+            UserName is required
+        </span><br/>
+        <span *ngIf = "name.dirty && name.value.length<10 && name.value.length>0 ">
+            userName must contain minimum 10 chars
+        </span><br/>
+
+        branch:<input type="text" name="branch"  [(ngModel)]="branches" #branch="ngModel" required maxlength="10"/><br/><br/>
+
+        <span *ngIf="branch.touched && !branch.value">
+            Branch is required
+        </span><br/>
+        <span *ngIf="branch.dirty && branch.value.length<10 && branch.value.length>0">
+            branch value maximum length is 10 chars
+        </span><br/>
+        
+        accno:<input type="text" name="accno" [(ngModel)]="accountNo" #acc="ngModel" required minlength="10" maxlength="10"/><br/><br/>
+
+        <span *ngIf="acc.touched && !acc.value">
+            account no is required
+        </span><br/>
+        <span *ngIf="acc.dirty && acc.value.length<10 && acc.value.length>0">
+            accountNo must contain 10 digits
+        </span><br/>
+
+        Ifsc:<input type="text" name="Ifsc"/><br/><br/>
+        address:<input type="text" name="address"/><br/><br/>
+        <button (click)="display(account)" type="button" [disabled]=account.invalid (click)="myFunction()">Submit</button>       
+        <button type="button">Reset</button><br/>
+        <button type="button" >Cancel</button>
+    </div>
+
+
+
+    
+
+</form>

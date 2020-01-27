@@ -1,0 +1,54 @@
+<form  [formGroup]="form" name="test">
+    <div class="container">
+        <div class="row">
+            <div class="well">
+                Register Form
+            </div>
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" placeholder="enter name" class="form-control" formControlName="name">
+                    <span *ngIf="form.get('name').touched && !form.get('name').value">
+                        name is required
+                        </span>
+                    <span *ngIf="form.get('name').dirty && form.get('name').invalid && form.get('name').value">
+                        maximum 10 chars are allowed
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label>password</label>
+                    <input type="password" placeholder="enter password" class="form-control" formControlName="password">
+                    <span *ngIf="form.get('password').touched && !form.get('password').value">
+                            password is required
+                            </span>
+                        <span *ngIf="form.get('password').dirty && form.get('password').invalid && form.get('password').value">
+                           minimum 4 chars are allowed
+                        </span>
+                </div>
+               <div class="form-group">
+                    <label>email</label>
+                    <input type="text" placeholder="enter email" class="form-control" formControlName="email">
+                    <span *ngIf="form.get('email').touched && !form.get('email').value">
+                            email is required
+                            </span>
+                        <span *ngIf="form.get('email').dirty && form.get('email').invalid && form.get('email').value">
+                           maximum 10 chars are allowed
+                        </span>
+               </div>
+               <div class="form-group">
+                    <label>mobno</label>
+                    <input type="text" placeholder="enter mob no" class="form-control" formControlName="mobno">
+                    <span *ngIf="form.get('mobno').touched && !form.get('mobno').value">
+                            mobno is required
+                            </span>
+                        <span *ngIf="form.get('mobno').dirty && form.get('mobno').invalid && form.get('mobno').value">
+                            10 chars are allowed
+                        </span>
+               </div>
+               <button type="button" class="btn btn-primary" (click)="navigateToward()" >submit</button>
+               <button type="reset" class="btn btn-danger">cancel</button>
+            
+            </div>
+        </div>
+    </div>
+</form>

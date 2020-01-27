@@ -1,0 +1,21 @@
+<p>employee works!</p>
+{{EmployeeName}}<br/>
+{{emp.name}}<br/>
+{{emp.Id}}<br/>
+{{emp.desg}}<br/>
+
+<ul>
+    <li *ngFor = "let employee of emps">
+    {{employee.name}}
+    {{employee.year}}
+    {{employee.color}}
+    {{employee.pantone_value}}
+    
+    </li>
+    <button (click)="getdata()">getdata</button>
+    <button (click) = "senddata()">send data</button>
+    <button (click) = "updatedata()">Update data</button>
+    <button (click)= "deletedata()">Delete data</button>
+       
+
+</ul>

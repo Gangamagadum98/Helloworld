@@ -1,0 +1,20 @@
+<p>shopping works!</p>
+{{category}}<br/>
+{{shop.cat}} <br/>
+{{shop.gender}} <br/>
+{{shop.brand}} <br/>
+
+<ul>
+    <li *ngFor="let employee of Employees">
+        {{employee.first_name}}
+        {{employee.email}}
+        
+        <br/>
+        <img [src]="employee.avatar" />
+    </li>
+    
+    <button (click)= "getdata()">get Data</button><br/>
+    <button (click)= "senddata()">Send Data</button><br/>
+    <button (click)= "updatedata()">update Data</button> <br/>
+    <button (click)= "deletedata()">Delete Data</button>
+</ul>

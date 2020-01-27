@@ -1,0 +1,13 @@
+.btn{
+    margin-right: 20px;
+}
+.container{
+    border: "1px solid black";
+    background-color: #fbfbfb;
+    width:380px;
+    height:400px;
+}
+.well{
+    background-color: #16a081;
+    color: #ffff;
+}

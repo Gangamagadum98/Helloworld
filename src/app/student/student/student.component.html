@@ -1,0 +1,21 @@
+
+<p>student works!</p>
+{{studs.name}}<br/>
+{{studs.age}}<br/>
+{{studs.color}}<br/>
+
+<ul>
+    <li *ngFor="let msg of Info">
+        {{msg.first_name}}
+        {{msg.email}}
+        
+        <br/>
+        <img [src]="msg.avatar" />
+    </li>
+
+    <button type="button" (click)="senddata()">Send Data</button>
+    <button type="button" (click)="updatedata()">update Data</button>
+    <button type="button" (click)="deletedata()">delete Data</button>
+</ul>
+
+

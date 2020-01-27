@@ -1,0 +1,14 @@
+.well{
+    background-color: teal;
+    color: white;
+}
+.container{
+    background-color:black;
+    color:#ffff;
+    border:"1px solid  black";
+    width:550px;
+    height:380px;
+}
+.btn{
+    margin-right: 20px;
+}

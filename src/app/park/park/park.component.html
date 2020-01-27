@@ -1,0 +1,20 @@
+
+<p>park works!</p><br/>
+{{pm.name}}<br/>
+{{pm.area}}<br/>
+{{pm.open}}<br/>
+<ul>
+    <li *ngFor="let student of students">
+        {{student.id}}
+        {{student.name}}
+        {{student.year}}
+
+       
+
+    </li>
+    
+    <button (click)="getdata()">getdata</button>
+    <button (click)="senddata()">send data</button>
+    <button (click)="updatedata()">update data</button>
+    <button (click)="deletedata()">delete data</button>
+</ul>

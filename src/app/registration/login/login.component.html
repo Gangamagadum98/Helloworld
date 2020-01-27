@@ -1,0 +1,45 @@
+<form  #form="ngForm" name="reg">
+    <div class="container">
+        <div class="row">
+                <div class="well">
+                    <h2>Login Form</h2>
+                </div>
+                <div class="col-md-8">                
+                <div class="form-group input-group">
+                    <label>username</label>
+                    <input type="text" class="form-control" placeholder="Enter your username" name="username" [(ngModel)]="uname" #name="ngModel" required>
+                   
+                    <div *ngIf="name.touched && !name.value" >
+                        username is required
+                    </div>
+                   <!-- <div *ngIf="name.touched && name.value!={{uname}}">
+                        username is incorrect
+                    </div>-->
+                    </div>
+                
+                <div class="form-group input-group">
+                    <label>password</label>
+               <input type="text" class="form-control" placeholder="enter your password" name="password" [(ngModel)]="pass" #password="ngModel" required>
+                    <div *ngIf="password.touched && !password.value">
+                        password is required
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="check" [(ngModel)]="checks" #checkbox="ngModel">
+                            remember me ?
+                        </label>
+                    </div>
+                </div>
+            
+        
+                <div class="form-group">
+                    <button type="button" (click)="navigateToHome()" class="btn btn-success" [disabled]=form.invalid>Login</button>
+                </div>
+                </div>
+        </div>
+    </div>
+</form>
+

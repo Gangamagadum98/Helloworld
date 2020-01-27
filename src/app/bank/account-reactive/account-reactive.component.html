@@ -1,0 +1,56 @@
+<p>account-reactive works!</p>
+
+<form name="Reactive" [formGroup]="form">
+    name:<input type="text" name="name" formControlName="name"/>
+
+    <span *ngIf="form.get('name').touched && !form.get('name').value">
+        name is required
+    </span><br/>
+
+    <span *ngIf="form.get('name').dirty && form.get('name').invalid && form.get('name').value">
+        name should contain minimum 5 chars
+    </span><br/><br/>
+    accno:<input type="text" name="accno" formControlName="accno"/><br/><br/>
+    <span *ngIf="form.get('accno').touched && !form.get('accno').value">
+        accno is required
+    </span><br/>
+    <span *ngIf="form.get('accno').dirty && form.get('accno').invalid ">
+        accno should contain maximum 10 digits
+    </span>
+    phno:<input type="text" name="phno" formControlName="phno"/><br/><br/>
+    <span *ngIf="form.get('phno').touched && !form.get('phno').value">
+        mobile no is required
+    </span><br/>
+    <span *ngIf="form.get('phno').dirty && form.get('phno').invalid && form.get('phno').value">
+        mobile no must contain 10 digits
+    </span><br/>
+
+    email:<input type="text" name="email" formControlName="email"/><br/><br/>
+    <span *ngIf="form.get('email').touched && !form.get('email').value">
+            email  is required
+        </span><br/>
+        <span *ngIf="form.get('email').dirty && form.get('email').invalid && form.get('email').value">
+            mobile no must contain 30 digits
+        </span><br/>
+
+    address:<input type="text" name="address" formControlName="address"><br/><br/>
+    <span *ngIf="form.get('address').touched && !form.get('address').value">
+            address is required
+        </span><br/>
+        <span *ngIf="form.get('address').dirty && form.get('address').invalid && form.get('address').value">
+                address  must contain 20 digits
+        </span><br/>
+
+    ifsc:<input type="text" name="ifsc" formControlName="ifsc"/>
+    <br/><br/>
+    <span *ngIf="form.get('ifsc').touched && !form.get('ifsc').value">
+            ifsc  is required
+        </span><br/>
+        <span *ngIf="form.get('ifsc').dirty && form.get('ifsc').invalid && form.get('ifsc').value">
+                ifsc no must contain 10 digits
+        </span><br/>
+
+    <button (click)="display(form)" type="button" [disabled] = form.invalid>Submit</button><br/><br/>
+    <button type="button">Cancel</button><br/>
+
+</form>

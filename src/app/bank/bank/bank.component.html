@@ -1,0 +1,37 @@
+<p>bank works!</p>
+<form #bank="ngForm" name="bank">
+    <pre>
+
+        {{userName}}
+   Name: <input type="text" [(ngModel)]="userName" name="userName"  #name="ngModel" required minlength="3"/><br/>
+   <!--untouched -- {{name.untouched}}
+   touched -- {{name.touched}}
+   pristine -- {{name.pristine}}
+   dirty -- {{name.dirty}}
+   valid -- {{name.valid}}
+   invalid -- {{name.invalid}}-->
+
+   <span *ngIf="name.touched && !name.value">
+       User name is required
+   </span>
+   <span *ngIf="name.touched && name.value.length<3 && name.value.length>0">
+       name should have atleast 3 chars
+   </span>
+
+
+
+   Address: <input type="text" [(ngModel)]="address" name="address"/><br/>
+   ph: <input type="text" [(ngModel)]="phno" name="ph" #ph="ngModel"/><br/>
+
+  <span *ngIf="ph.touched && !ph.value"> phone no is required</span>
+  
+ 
+ 
+
+   Email: <input type="text" [(ngModel)]="email" name="email"/><br/>
+   type: <input type="text" [(ngModel)]="type" name="type"/><br/>
+  <button (click)="display(bank)" type="button" [disabled]=bank.invalid>Submit</button><br/>
+  <button>Cancel</button>
+  
+</pre>
+</form>

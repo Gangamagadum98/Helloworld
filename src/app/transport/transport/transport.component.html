@@ -1,0 +1,25 @@
+<p>transport works!</p>
+<form #form="ngForm" name="reg">
+        <div class="row">
+            <div class="col-md-6">
+                <label>username</label>
+                <input type="text" name="name" [(ngModel)]="name" #uname="ngModel" required minlength="3">
+                <span *ngIf="uname.touched && !uname.value">
+                    name is required
+                </span>
+                <span *ngIf="uname.dirty &&  uname.value.length<3 &&  uname.value.length>0">
+                    name is min 3
+                </span>
+                <label>password</label>
+                <input type="password" name="pass" [(ngModel)]="password" #pass="ngModel" required minlength="3">
+                <span *ngIf="pass.touched && !pass.value">
+                        name is required
+                    </span>
+                    <span *ngIf="pass.dirty &&  pass.value.length<3 &&  pass.value.length>0">
+                        name is min 3
+                    </span>
+                <button type="button" (click)="navigateToLog()">Submit</button>
+                <button type="reset">cancel</button>
+            </div>
+        </div>
+    </form>
